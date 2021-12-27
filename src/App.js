@@ -3,8 +3,8 @@ import Form from "./components/Form.jsx";
 import { useState } from "react";
 import { useEffect } from "react";
 import TodoList from "./components/TodoList";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -48,11 +48,7 @@ function App() {
   return (
     <div className="App">
       <ToastContainer />
-      <Form
-        todos={todos}
-        setTodos={setTodos}
-        setStatus={setStatus}
-      />
+      <Form todos={todos} setTodos={setTodos} setStatus={setStatus} />
       <TodoList
         todos={todos}
         setTodos={setTodos}

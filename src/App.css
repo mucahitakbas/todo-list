@@ -5,10 +5,26 @@
 }
 
 body {
-  background: linear-gradient(to right, #83147d, #0e555c);
+  background-repeat: no-repeat;
   font-family: sans-serif;
+  background-attachment: fixed;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  background-size: 100%;
+  background-image: linear-gradient(
+    to right top,
+    #ac9fa0,
+    #b198a3,
+    #ad94af,
+    #9b94be,
+    #7797cb
+  );
 }
-
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
 header h1 {
   color: #fff;
   margin: 5rem 0;
@@ -24,15 +40,20 @@ form {
 
 form {
   position: relative;
+  overflow: hidden;
 }
 
 form .search {
   display: flex;
 }
 h1 {
-  color: aliceblue;
-  margin-bottom: 3%;
+  color: #ad9ea1;
+  margin: 0 auto 35px;
+  font-size: 2.2em;
+
+  text-shadow: 2px 2px 5px #000000;
 }
+
 form button,
 form input {
   padding: 0.5rem;
@@ -44,51 +65,27 @@ form input {
 
 form button {
   color: #fff;
-  background-color: #340436;
+  background-color: #7997ca;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 form button:hover {
   background-color: #fff;
-  color: #340436;
+  color: #7997ca;
 }
-
 .select {
-  position: relative;
-  margin: 1rem;
-  overflow: hidden;
+  margin-top: 10px;
 }
 
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
-  border: none;
-
-  width: 10rem;
-  padding: 1rem;
-  cursor: pointer;
-  color: #340436;
+.İcon {
+  float: right;
+  margin-left: 1%;
+  font-size: large;
 }
 
-.select:after {
-  content: "\25BC";
-  position: absolute;
-  background-color: #340436;
-  color: #fff;
-  top: 0;
-  right: 0;
-  padding: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  pointer-events: none;
-}
-
-.select:hover:after {
-  background-color: #fff;
-  color: #340436;
+.İcon:hover {
+  size: 10%;
 }
 
 .todo-container {
@@ -104,18 +101,20 @@ select {
 
 .todo {
   margin: 0.5rem;
-  background-color: #fff;
+
   color: #000;
   font-size: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.5s all ease;
+  box-shadow: 3px 3px 7px rgb(0, 0, 0);
 }
 
 .todo li {
   width: 100%;
   padding: 0 0.5rem;
+  color: #ffffff;
 }
 
 .complete-btn,
@@ -129,11 +128,15 @@ select {
 }
 
 .complete-btn {
-  background-color: #0b8793;
+  background-color: rgb(60, 146, 64);
 }
 
 .fa-check-circle,
 .fa-minus-circle {
   font-size: 1.5rem;
   pointer-events: none;
+}
+.completed {
+  opacity: 0.1;
+  text-decoration: line-through;
 }

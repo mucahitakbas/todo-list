@@ -1,7 +1,8 @@
 import { useState } from "react";
 import isEmpty from "lodash/isEmpty";
 import { toast } from "react-toastify";
-
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 function Form({ todos, setTodos, setStatus }) {
   const [inputText, setInputText] = useState("");
   const inputTextHandler = (e) => {
@@ -52,8 +53,18 @@ function Form({ todos, setTodos, setStatus }) {
         </button>
       </div>
 
-      <div className="select">
-        <select
+      <div>
+        <Select
+          className="select"
+          label="Status"
+          onChange={statusTodoHandler}
+          defaultValue={"all"}
+        >
+          <MenuItem value="all">All</MenuItem>
+          <MenuItem value="completed">Completed</MenuItem>
+          <MenuItem value="uncompleted">Uncompleted</MenuItem>
+        </Select>
+        {/* <select
           name="todos"
           className="filter-todo"
           onChange={statusTodoHandler}
@@ -61,7 +72,7 @@ function Form({ todos, setTodos, setStatus }) {
           <option value="all">All</option>
           <option value="completed">Completed</option>
           <option value="uncompleted">Uncompleted</option>
-        </select>
+        </select> */}
       </div>
     </form>
   );
