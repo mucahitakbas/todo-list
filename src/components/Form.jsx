@@ -12,11 +12,11 @@ function Form({ todos, setTodos, setStatus }) {
   const submitTodoHandler = (e) => {
     e.preventDefault();
     if (isEmpty(inputText)) {
-      toast.error("Input alanı boş geçilemez!", {
+      toast.error("Input field cannot be empty!", {
         theme: "colored",
       });
     } else {
-      toast.success("Ekleme Başarılı.", {
+      toast.success("Add successful.", {
         theme: "colored",
       });
       setTodos([

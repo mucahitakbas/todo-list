@@ -74,6 +74,9 @@ form button:hover {
   background-color: #fff;
   color: #7997ca;
 }
+ul {
+  margin: 10px;
+}
 .select {
   margin-top: 10px;
 }
@@ -90,8 +93,8 @@ form button:hover {
 
 .todo-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .todo-list {

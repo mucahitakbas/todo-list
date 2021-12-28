@@ -30,11 +30,11 @@ function Todo({ text, todos, setTodos, todo }) {
 
   const editClosedTodoHandler = () => {
     if (isEmpty(value)) {
-      toast.error("Input alanı boş geçilemez!", {
+      toast.error("Input field cannot be empty!", {
         theme: "colored",
       });
     } else {
-      toast.success("Değiştirme Başarılı.", {
+      toast.success("Change successful.", {
         theme: "colored",
       });
       setEdit(true);
